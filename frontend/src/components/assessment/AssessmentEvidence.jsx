@@ -1,0 +1,4 @@
+import React from 'react';
+
+const AssessmentEvidence = ({ evidence = [] }) => <section style={{ background: 'var(--bg-dark)', border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius)', padding: 20 }}><h2 style={{ fontSize: '0.95rem', marginBottom: 12 }}>SUPPORTING EVIDENCE</h2><p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>Backend evidence records supporting this assessment: <strong style={{ color: 'var(--text-primary)' }}>{evidence.length}</strong></p>{evidence.slice(0, 8).map((item) => <div key={item.event_id || item.timestamp} style={{ borderTop: '1px solid var(--border-color)', padding: '10px 0', color: 'var(--text-secondary)', fontSize: '0.78rem' }}><span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-primary)' }}>{item.event_id || 'N/A'}</span> | {item.agent?.name || 'N/A'} | Rule {item.rule?.id || 'N/A'} | Severity {item.rule?.severity ?? 'N/A'}</div>)}</section>;
+export default AssessmentEvidence;

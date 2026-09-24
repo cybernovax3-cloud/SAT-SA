@@ -1,0 +1,249 @@
+/* SAT-SA SOC Global CSS Variables and Styling System */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* SAT-SA light enterprise SOC design */
+  --bg-page: #f5f7fa;
+  --bg-secondary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-elevated: #eef2f7;
+  --bg-darker: rgba(248, 250, 252, 0.76); /* Overall page surfaces */
+  --bg-dark: rgba(255, 255, 255, 0.68);   /* Panels / cards background */
+  --bg-dark-hover: rgba(237, 242, 247, 0.84); /* Panel/list item hover */
+  --border-color: #e2e8f0;   /* Subtle panel borders */
+  --border-strong: #cbd5e1;
+  --border-focus: #2563eb;
+
+  /* Text colors */
+  --text-primary: #111827;   /* Near-black */
+  --text-secondary: #475569; /* Slate */
+  --text-muted: #64748b;     /* Muted grey */
+
+  /* Accent & Status colors */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-soft: rgba(37, 99, 235, 0.08);
+
+  --success: #16a34a;
+  --success-bg: rgba(22, 163, 74, 0.08);
+
+  --warning: #d97706;
+  --warning-bg: rgba(217, 119, 6, 0.12);
+
+  --danger: #dc2626;
+  --danger-bg: rgba(220, 38, 38, 0.08);
+
+  --info: #0ea5e9;
+  --info-bg: rgba(14, 165, 233, 0.08);
+
+  /* Fonts */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Layout dimensions */
+  --sidebar-width-expanded: 260px;
+  --sidebar-width-collapsed: 68px;
+  --header-height: 64px;
+  --statusbar-height: 28px;
+
+  --transition-speed: 0.2s;
+  --border-radius: 12px;
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.04);
+  --glass-surface: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.68);
+  --glass-glow: rgba(96, 165, 250, 0.08);
+  --shadow-floating: 0 10px 30px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  --shadow-floating-hover: 0 16px 36px rgba(15, 23, 42, 0.08), 0 3px 8px rgba(15, 23, 42, 0.04);
+}
+
+:root[data-theme='dark'] {
+  --bg-page: #0b1220;
+  --bg-secondary: #111827;
+  --bg-surface: #121c2d;
+  --bg-elevated: #1a273b;
+  --bg-darker: #0f172a;
+  --bg-dark: rgba(20, 32, 51, 0.72);
+  --bg-dark-hover: rgba(28, 43, 66, 0.84);
+  --border-color: #2b3b52;
+  --border-strong: #40536d;
+  --border-focus: #60a5fa;
+
+  --text-primary: #e5edf7;
+  --text-secondary: #b5c3d6;
+  --text-muted: #8393aa;
+
+  --primary: #72a9f7;
+  --primary-hover: #8bb9fb;
+  --primary-soft: rgba(114, 169, 247, 0.16);
+  --success: #72d3a0;
+  --success-bg: rgba(114, 211, 160, 0.14);
+  --warning: #f3c477;
+  --warning-bg: rgba(243, 196, 119, 0.15);
+  --danger: #f28f9b;
+  --danger-bg: rgba(242, 143, 155, 0.14);
+  --info: #75c9e8;
+  --info-bg: rgba(117, 201, 232, 0.14);
+
+  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.22);
+  --glass-surface: rgba(18, 28, 45, 0.76);
+  --glass-border: rgba(148, 193, 255, 0.16);
+  --glass-glow: rgba(83, 177, 231, 0.12);
+  --shadow-floating: 0 14px 32px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
+  --shadow-floating-hover: 0 20px 42px rgba(0, 0, 0, 0.38), 0 4px 12px rgba(48, 145, 206, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-page);
+  background-image: radial-gradient(circle at 12% 8%, var(--glass-glow), transparent 32%), radial-gradient(circle at 88% 92%, var(--primary-soft), transparent 28%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow: auto;
+  min-height: 100vh;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.glass-panel {
+  background: var(--glass-surface);
+  border-color: var(--glass-border);
+  box-shadow: var(--shadow-floating);
+  backdrop-filter: blur(16px) saturate(115%);
+  -webkit-backdrop-filter: blur(16px) saturate(115%);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--border-focus) 34%, var(--glass-border));
+  box-shadow: var(--shadow-floating-hover);
+}
+
+/* Existing non-dashboard panels share these inline theme tokens. */
+[style*="background: var(--bg-dark)"],
+[style*="background-color: var(--bg-dark)"],
+[style*="background: var(--bg-surface)"] {
+  backdrop-filter: blur(16px) saturate(115%);
+  -webkit-backdrop-filter: blur(16px) saturate(115%);
+  box-shadow: var(--shadow-floating);
+  border: 1px solid var(--glass-border) !important;
+}
+
+[style*="background: var(--bg-dark)"]:hover,
+[style*="background-color: var(--bg-dark)"]:hover,
+[style*="background: var(--bg-surface)"]:hover {
+  box-shadow: var(--shadow-floating-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel,
+  .glass-panel:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+button, input, textarea, select, table, td, th, div, header, main, aside {
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+html, body, #root {
+  min-height: 100%;
+  height: 100%;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Pulsing Animations for Indicators */
+@keyframes pulse-live {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pulse-dot.live {
+  background-color: var(--success);
+  box-shadow: 0 0 8px var(--success);
+  animation: pulse-live 1.8s infinite ease-in-out;
+}
+
+.pulse-dot.connecting {
+  background-color: var(--warning);
+  box-shadow: 0 0 8px var(--warning);
+  animation: pulse-live 1.2s infinite ease-in-out;
+}
+
+.pulse-dot.offline {
+  background-color: var(--danger);
+  box-shadow: 0 0 4px var(--danger);
+}
+
+/* Tooltip standard utility */
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--bg-darker);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+  pointer-events: none;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

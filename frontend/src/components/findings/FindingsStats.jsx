@@ -1,0 +1,4 @@
+import React from 'react';
+
+const FindingsStats = ({ findings = [] }) => { const high = findings.filter((item) => ['high', 'critical'].includes(String(item.severity).toLowerCase())).length; const critical = findings.filter((item) => String(item.severity).toLowerCase() === 'critical').length; return <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 16 }}>{[['TOTAL FINDINGS', findings.length], ['HIGH FINDINGS', high], ['CRITICAL FINDINGS', critical]].map(([label, value]) => <div key={label} style={{ background: 'var(--bg-dark)', border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius)', padding: '16px 20px' }}><div style={{ color: 'var(--text-muted)', fontSize: '0.68rem', fontWeight: 700 }}>{label}</div><div style={{ color: 'var(--text-primary)', fontSize: '1.8rem', fontWeight: 700, marginTop: 8 }}>{value}</div></div>)}</div>; };
+export default FindingsStats;

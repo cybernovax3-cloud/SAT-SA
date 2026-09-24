@@ -1,0 +1,9 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SeverityBadge from '../common/SeverityBadge';
+
+const formatTime = (value) => { if (!value) return ''; const date = new Date(value); return Number.isNaN(date.getTime()) ? String(value) : date.toLocaleTimeString(); };
+
+const LiveEventStream = ({ alerts = [], newEventIds = new Set(), paused = false }) => <section style={{ background: 'var(--bg-dark)', border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius)', padding: 20 }}><h2 style={{ fontSize: '0.95rem', marginBottom: 14 }}>{paused ? 'LIVE STREAM PAUSED' : 'LIVE ACTIVITY'}</h2><div style={{ display: 'flex', flexDirection: 'column' }}>{alerts.map((item) => <Link key={item.event_id} to={`/alerts/${encodeURIComponent(item.event_id)}`} style={{ display: 'grid', gridTemplateColumns: '86px minmax(120px, 1fr) 82px 78px minmax(120px, 1.5fr) 34px', gap: 10, alignItems: 'center', padding: '11px 4px', borderTop: '1px solid rgba(255,255,255,.05)', color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.8rem' }}><span style={{ fontFamily: 'var(--font-mono)' }}>{formatTime(item.timestamp)}</span><span style={{ color: 'var(--text-primary)' }}>{item.agent?.name || ''}{item.agent?.ip ? ` (${item.agent.ip})` : ''}</span><span>Rule {item.rule?.id || ''}</span><SeverityBadge severity={item.rule?.severity} /><span title={item.rule?.description}>{item.rule?.description || item.decoder || ''}</span>{newEventIds.has(item.event_id) && <strong style={{ color: 'var(--primary)', fontSize: '0.65rem' }}>NEW</strong>}</Link>)}</div>{!alerts.length && <div style={{ padding: 24, color: 'var(--text-muted)', textAlign: 'center' }}>No activity matches the current filters.</div>}</section>;
+
+export default LiveEventStream;
