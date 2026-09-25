@@ -169,7 +169,7 @@ const Dashboard = ({ setApiStatus, setLastUpdated }) => {
             <div>Auto refresh: 5s</div>
           </div>
           <button
-            onClick={() => window.location.reload()}
+            onClick={refreshDashboard}
             style={{
               backgroundColor: 'var(--bg-dark)',
               border: '1px solid var(--border-color)',
