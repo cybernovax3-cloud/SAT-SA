@@ -23,3 +23,100 @@
 .final-assessment { border-left: 3px solid var(--primary); padding: 14px 16px; background: rgba(59,130,246,.08); font-size: 1rem; }
 .report-actions { justify-content: flex-end; }
 @media print { body { background: white !important; } .report-controls, .report-actions, aside, header, footer { display: none !important; } main { padding: 0 !important; overflow: visible !important; } .report-preview { border: 0; background: white; color: black; } .report-block, .report-heading { border-color: #ccc; } .report-block p, .report-detail span { color: #444; } .report-detail strong { color: #111; } }
+/* REPORT ACTION BUTTONS */
+
+.report-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 0 24px;
+}
+
+.report-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 38px;
+  padding: 8px 14px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.18s ease;
+}
+
+.report-action-btn:hover {
+  background: var(--bg-dark-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+}
+
+.report-action-btn:active {
+  transform: translateY(0);
+}
+
+.report-action-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+
+/* GENERATE REPORT BUTTON */
+
+.report-generate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 40px;
+  padding: 9px 16px;
+
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+
+  background: var(--primary);
+  color: #ffffff;
+
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.18s ease;
+}
+
+.report-generate-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.report-generate-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.report-generate-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.report-generate-btn svg {
+  width: 15px;
+  height: 15px;
+}
