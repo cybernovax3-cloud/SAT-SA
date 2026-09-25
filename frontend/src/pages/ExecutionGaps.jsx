@@ -1,4 +1,4 @@
-
+import React, { useState, useEffect, useCallback } from 'react';
 import { ShieldAlert, RefreshCw, AlertTriangle } from 'lucide-react';
 import api, { isDemoModeEnabled } from '../api/api';
 import GapOverviewCards from '../components/execution_gaps/GapOverviewCards';
