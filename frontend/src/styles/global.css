@@ -247,3 +247,38 @@ html, body, #root {
   visibility: visible;
   opacity: 1;
 }
+/* Evidence Explorer Refresh Button */
+
+.evidence-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  height: 34px;
+  padding: 0 12px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.evidence-refresh-btn:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.evidence-refresh-btn svg {
+  width: 15px;
+  height: 15px;
+}
