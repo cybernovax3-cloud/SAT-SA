@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import {
   Menu,
-  User,
-  LogOut,
-  Settings,
   Sun,
   Moon
 } from 'lucide-react';
@@ -22,27 +18,6 @@ const Header = ({
   demoMode = true,
   toggleDemoMode
 }) => {
-  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
-
-  const navigate = useNavigate();
-
-  // Profile
-  const handleProfile = () => {
-    setProfileDropdownOpen(false);
-    navigate('/profile');
-  };
-
-  // Settings
-  const handleSettings = () => {
-    setProfileDropdownOpen(false);
-    navigate('/settings');
-  };
-
-  // Logout
-  const handleLogout = () => {
-    setProfileDropdownOpen(false);
-    navigate('/');
-  };
 
   return (
     <header
@@ -215,196 +190,56 @@ const Header = ({
         {/* ==================== USER PROFILE ==================== */}
         <div
           style={{
-            position: 'relative'
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            textAlign: 'left'
           }}
         >
-          {/* User Button */}
-          <button
-            type="button"
-            onClick={() =>
-              setProfileDropdownOpen(
-                !profileDropdownOpen
-              )
-            }
-            aria-label="Open user menu"
-            aria-expanded={profileDropdownOpen}
+          {/* Avatar */}
+          <div
             style={{
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              backgroundColor: 'var(--primary-soft)',
               display: 'flex',
               alignItems: 'center',
-              gap: '10px',
-              textAlign: 'left'
+              justifyContent: 'center',
+              color: 'var(--primary)',
+              fontWeight: 'bold',
+              fontSize: '0.85rem'
             }}
           >
-            {/* Avatar */}
-            <div
+            SA
+          </div>
+
+          {/* User Details */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <span
               style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '50%',
-                backgroundColor: 'var(--primary-soft)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--primary)',
-                fontWeight: 'bold',
-                fontSize: '0.85rem'
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                color: 'var(--text-primary)'
               }}
             >
-              SA
-            </div>
+              SOC Analyst
+            </span>
 
-            {/* User Details */}
-            <div
+            <span
               style={{
-                display: 'flex',
-                flexDirection: 'column'
+                fontSize: '0.7rem',
+                color: 'var(--text-secondary)'
               }}
             >
-              <span
-                style={{
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  color: 'var(--text-primary)'
-                }}
-              >
-                SOC Analyst
-              </span>
-
-              <span
-                style={{
-                  fontSize: '0.7rem',
-                  color: 'var(--text-secondary)'
-                }}
-              >
-                SAT-SA Operator
-              </span>
-            </div>
-          </button>
-
-          {/* ==================== DROPDOWN ==================== */}
-          {profileDropdownOpen && (
-            <div
-              style={{
-                position: 'absolute',
-                top: '40px',
-                right: '0',
-                backgroundColor: 'var(--bg-surface)',
-                border: '1px solid var(--border-color)',
-                borderRadius: 'var(--border-radius)',
-                width: '160px',
-                boxShadow:
-                  '0 12px 30px rgba(15, 23, 42, 0.08)',
-                zIndex: 100,
-                padding: '4px'
-              }}
-            >
-              {/* ==================== PROFILE ==================== */}
-              <button
-                type="button"
-                onClick={handleProfile}
-                style={{
-                  width: '100%',
-                  background: 'transparent',
-                  border: 'none',
-                  padding: '8px 12px',
-                  textAlign: 'left',
-                  color: 'var(--text-secondary)',
-                  fontSize: '0.8rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  borderRadius: '4px'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    'var(--bg-dark-hover)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    'transparent';
-                }}
-              >
-                <User size={14} />
-                Profile
-              </button>
-
-              {/* ==================== SETTINGS ==================== */}
-              <button
-                type="button"
-                onClick={handleSettings}
-                style={{
-                  width: '100%',
-                  background: 'transparent',
-                  border: 'none',
-                  padding: '8px 12px',
-                  textAlign: 'left',
-                  color: 'var(--text-secondary)',
-                  fontSize: '0.8rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  borderRadius: '4px'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    'var(--bg-dark-hover)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    'transparent';
-                }}
-              >
-                <Settings size={14} />
-                Settings
-              </button>
-
-              {/* Divider */}
-              <div
-                style={{
-                  height: '1px',
-                  backgroundColor:
-                    'var(--border-color)',
-                  margin: '4px 0'
-                }}
-              />
-
-              {/* ==================== LOGOUT ==================== */}
-              <button
-                type="button"
-                onClick={handleLogout}
-                style={{
-                  width: '100%',
-                  background: 'transparent',
-                  border: 'none',
-                  padding: '8px 12px',
-                  textAlign: 'left',
-                  color: 'var(--danger)',
-                  fontSize: '0.8rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  borderRadius: '4px'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    'rgba(239, 68, 68, 0.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    'transparent';
-                }}
-              >
-                <LogOut size={14} />
-                Logout
-              </button>
-            </div>
-          )}
+              SAT-SA Operator
+            </span>
+          </div>
         </div>
       </div>
     </header>
