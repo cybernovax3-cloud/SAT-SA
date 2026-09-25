@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SAT-SA</title>
+
+  <script>
+    const path = window.location.pathname;
+
+    sessionStorage.setItem(
+      'sat-sa-redirect',
+      path + window.location.search + window.location.hash
+    );
+
+    window.location.replace('/SAT-SA/');
+  </script>
+</head>
+<body>
+  <p>Loading SAT-SA...</p>
+</body>
+</html>
