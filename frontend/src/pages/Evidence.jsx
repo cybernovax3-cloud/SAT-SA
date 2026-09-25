@@ -57,7 +57,14 @@ const Evidence = ({ setApiStatus, setLastUpdated }) => {
         <p style={{ color: 'var(--text-secondary)' }}>Inspect evidence supporting SAT-SA analysis</p></div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'var(--text-muted)', fontSize: '0.78rem' }}>
         <span>Last updated: {lastUpdated || '--'}</span>
-        <button onClick={refresh} aria-label="Refresh evidence"><RefreshCw size={15} /> Refresh</button>
+        <button
+  className="evidence-refresh-btn"
+  onClick={refresh}
+  aria-label="Refresh evidence"
+>
+  <RefreshCw size={15} />
+  Refresh
+</button>
         <label><input type="checkbox" checked={autoRefresh} onChange={(event) => setAutoRefresh(event.target.checked)} /> Auto Refresh</label>
       </div>
     </header>
