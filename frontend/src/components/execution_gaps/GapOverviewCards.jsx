@@ -42,14 +42,53 @@ const GapOverviewCards = ({ stats, loading }) => {
   const s = stats || {};
   return (
     <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-      <MetricCard icon={Activity}       title="Incidents Assessed"    value={s.total_incidents_assessed ?? '--'}  color="var(--primary)"  subtitle="From live Wazuh alerts" />
-      <MetricCard icon={ShieldAlert}    title="Execution Gaps"        value={s.execution_gaps_detected ?? '--'}   color="var(--warning)"  subtitle="Workflow incomplete" />
-      <MetricCard icon={AlertTriangle}  title="Critical Gaps"         value={s.critical_gaps ?? '--'}             color="var(--danger)"   subtitle="Critical severity only" />
-      <MetricCard icon={Search}         title="Missing Investigations" value={s.missing_investigations ?? '--'}    color="var(--warning)"  subtitle="Not investigated" />
-      <MetricCard icon={ArrowUpCircle}  title="Missing Escalations"   value={s.missing_escalations ?? '--'}       color="var(--danger)"   subtitle="Not escalated" />
-      <MetricCard icon={Wrench}         title="Missing Remediations"   value={s.missing_remediations ?? '--'}      color="var(--info)"     subtitle="Not remediated" />
-    </div>
-  );
+     <MetricCard
+  icon={Activity}
+  title="Incidents Assessed"
+  value={s.incidents_assessed ?? '--'}
+  color="var(--primary)"
+  subtitle="From SOC evidence"
+/>
+
+<MetricCard
+  icon={ShieldAlert}
+  title="Execution Gaps"
+  value={s.execution_gaps ?? '--'}
+  color="var(--warning)"
+  subtitle="Workflow incomplete"
+/>
+
+<MetricCard
+  icon={AlertTriangle}
+  title="Critical Gaps"
+  value={s.critical_gaps ?? '--'}
+  color="var(--danger)"
+  subtitle="Critical severity only"
+/>
+
+<MetricCard
+  icon={Search}
+  title="Missing Investigations"
+  value={s.missing_investigations ?? '--'}
+  color="var(--warning)"
+  subtitle="Not investigated"
+/>
+
+<MetricCard
+  icon={ArrowUpCircle}
+  title="Missing Escalations"
+  value={s.missing_escalations ?? '--'}
+  color="var(--danger)"
+  subtitle="Not escalated"
+/>
+
+<MetricCard
+  icon={Wrench}
+  title="Missing Remediations"
+  value={s.missing_remediations ?? '--'}
+  color="var(--info)"
+  subtitle="Not remediated"
+/>
 };
 
 export default GapOverviewCards;
