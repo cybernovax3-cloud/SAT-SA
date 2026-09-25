@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/SAT-SA">
       <AppLayout
         apiStatus={demoMode ? 'LIVE' : apiStatus}
         lastUpdated={lastUpdated}
