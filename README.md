@@ -22,10 +22,6 @@ Python 3.x
 
 Node.js and npm
 
-Git
-
-Docker Desktop / Docker Engine and Docker Compose (for containerized setup)
-
 1. Clone the Repository
 
 git clone https://github.com/cybernovax3-cloud/SAT-SA.git
