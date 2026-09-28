@@ -2,84 +2,139 @@ SAT-SA — SOC Supervisory Analytics Tool for SOC Assessment
 
 SIH26157 | Team CYBERNOVA
 
-SAT-SA is an offline, air-gapped supervisory analytics platform that helps cybersecurity examiners assess periodic submissions from Critical Sector Entities (CSEs). It transforms alerts, case records and supporting evidence into correlated, prioritized and explainable review intelligence, while keeping the human examiner as the final decision-maker.
+SAT-SA is an offline, air-gapped supervisory analytics platform that supports cybersecurity supervisors and examiners in assessing periodic submissions from Critical Sector Entities (CSEs). It converts alerts, case records and supporting evidence into normalized, correlated, prioritized and explainable supervisory intelligence, while keeping the human examiner as the final decision-maker.
+
+ Problem & Solution
+
+Manual supervisory assessment can require reviewing large volumes of alerts, investigations, evidence and case records, making it difficult to consistently identify supervisory attention areas, behavioural deviations, execution gaps, missing evidence and cross-evidence patterns. SAT-SA provides a dedicated supervisory analytics layer to structure, correlate and prioritize submitted evidence without replacing the SOC or examiner.
 
 Core Workflow
 
-CSE Periodic Data → Evidence Quality & Normalization → Entity Baseline & Behaviour Profiling → Supervisory Signal Extraction → Cross-Evidence Correlation → Execution Gap & Negative Space Analytics → Supervisory Attention Assessment → Intelligent Review Selection → Explainable Evidence & Finding Generation → Human Examiner Review → Supervisory Finding / Assessment Report → Examiner Feedback & Calibration
+CSE PERIODIC DATA → EVIDENCE QUALITY & NORMALIZATION → ENTITY BASELINE & BEHAVIOUR PROFILING → SUPERVISORY SIGNAL EXTRACTION → CROSS-EVIDENCE CORRELATION → EXECUTION GAP & NEGATIVE SPACE ANALYTICS → SUPERVISORY ATTENTION ASSESSMENT → INTELLIGENT REVIEW SELECTION → EXPLAINABLE EVIDENCE & FINDING GENERATION → HUMAN EXAMINER REVIEW → SUPERVISORY FINDING / ASSESSMENT REPORT → EXAMINER FEEDBACK & CALIBRATION
 
-Key Capabilities
+ Key Capabilities
 
-Evidence Intelligence: validation, normalization and evidence traceability.
+Evidence Intelligence: validation, quality assessment, normalization and traceability.
 
-Entity Profiling: behavioural baselines and deviation analysis.
+Entity Profiling: behavioural baselines, historical patterns and deviation analysis.
 
-Supervisory Analytics: cross-evidence correlation and execution-gap / negative-space analysis.
+Supervisory Analytics: signal extraction, cross-evidence correlation, execution-gap and negative-space analysis.
 
-Intelligent Prioritization: identifies entities and evidence requiring supervisory attention.
+Intelligent Review Selection: identifies entities, evidence and investigations requiring deeper supervisory review.
 
-Explainable AI: evidence-linked explanations and finding-generation assistance using local AI/XAI.
+Explainable AI: evidence-linked explanations and finding-generation assistance using locally deployed AI/XAI.
 
-Human-in-the-Loop: examiner validates, challenges and finalizes findings.
+Human-in-the-Loop: examiner reviews, validates, challenges and finalizes findings.
 
-Offline by Design: on-premise, air-gapped deployment without cloud AI/API dependency.
+Offline by Design: on-premise, air-gapped deployment without mandatory cloud AI/API dependency.
+
+ System Architecture
+
+CSE PERIODIC SUBMISSIONS
+          ↓
+Evidence Quality & Normalization
+          ↓
+Entity Baseline & Behaviour Profiling
+          ↓
+Supervisory Signal Extraction
+          ↓
+Cross-Evidence Correlation
+          ↓
+Execution Gap & Negative Space Analytics
+          ↓
+Supervisory Attention Assessment
+          ↓
+Intelligent Review Selection
+          ↓
+Explainable Evidence & Finding Generation
+          ↓
+HUMAN EXAMINER REVIEW
+          ↓
+Supervisory Finding / Assessment Report
+          ↓
+Examiner Feedback & Calibration
 
 Technology Stack
 
-Frontend: React + TypeScript, Tailwind CSS, ECharts
-Backend: FastAPI, Celery, Redis
-Analytics: Scikit-learn, PyOD, behavioural/anomaly analytics
-AI/XAI: Local Ollama, SHAP
-Storage/Search: PostgreSQL, TimescaleDB, OpenSearch
-Security: Keycloak RBAC, Nginx, Audit Trail
-Deployment: Docker, On-Premise, Air-Gapped
+Layer
+
+Technologies
+
+Frontend
+
+React, TypeScript, Tailwind CSS, ECharts
+
+Backend / API
+
+FastAPI
+
+Processing
+
+Celery, Redis
+
+Analytics
+
+Scikit-learn, PyOD, Behavioural / Anomaly Analytics
+
+AI / XAI
+
+Local Ollama, SHAP
+
+Storage / Search
+
+PostgreSQL, TimescaleDB, OpenSearch
+
+Security
+
+Keycloak RBAC, Nginx, Audit Trail
+
+Deployment
+
+Docker, On-Premise, Air-Gapped
+
+ Evidence Sources
+
+SAT-SA can consume authorized structured evidence originating from platforms such as Wazuh, TheHive, Splunk/Elastic and MISP. These are external evidence sources/integrations, not internal SAT-SA services. SAT-SA provides the supervisory analytics and assessment layer over submitted evidence.
+
+Security, AI & Human Oversight
+
+Designed for controlled supervisory environments with RBAC, evidence traceability, auditability, local processing and air-gapped deployment. AI provides decision-support, not autonomous decisions. The examiner remains responsible for evidence review, validation, challenge/override and final supervisory findings.
 
 Quick Setup
 
-1. Clone
-
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/cybernovax3-cloud/SAT-SA.git
 cd SAT-SA
 
-2. Backend
+Backend
 
 cd backend
 python -m venv .venv
-
-Windows
-
-.venv\Scripts\activate
-
-Linux
-
-source .venv/bin/activate
-
+# Windows: .venv\Scripts\activate
+# Linux:   source .venv/bin/activate
 pip install -r requirements.txt
 
-Configure the environment values required by the submitted backend, then start the API using the actual FastAPI entry point in the repository.
+Configure required environment values and start the API using the FastAPI entry point configured in the submitted repository.
 
-3. Frontend
+Frontend
 
 cd ../frontend
 npm install
 npm run dev
 
-Open the local URL displayed by Vite.
-
-4. Docker
-
-docker compose build
-docker compose up -d
-docker compose ps
-
-Stop services:
-
-docker compose down
-
 Evaluation / Demo Flow
 
-Submission → Normalization → Profiling → Correlation → Attention Assessment → Review Selection → Explainable Evidence → Examiner Review → Assessment Finding
+CSE Submission → Normalization → Profiling → Signal Extraction → Correlation → Attention Assessment → Review Selection → Explainable Evidence → Human Examiner Review → Assessment Finding
 
-Security & Scope
+Scope
 
-SAT-SA is designed for authorized supervisory use with RBAC, evidence traceability and auditability. It is not a SIEM, not a real-time SOC monitoring platform, not a SOC replacement, and does not make the final supervisory decision.
+SAT-SA is not a SIEM, not a real-time SOC monitoring platform, not a SOC replacement, and not an autonomous supervisory decision-maker. It focuses on supervisory assessment and analytics of periodic CSE submissions.
+
+##  Expected Outputs
+
+Evidence Quality Indicators • Entity Profiles • Supervisory Signals • Cross-Evidence Correlations • Execution-Gap Indicators • Negative-Space Indicators • Supervisory Attention Assessment • Intelligent Review Selection • Explainable Evidence • Examiner-Assisted Findings • Assessment Reports • Examiner Feedback & Calibration
+
+### Team CYBERNOVA
+**Smart India Hackathon 2026 | Problem Statement SIH26157**
+
+### 📄 License
+This project is licensed under the **MIT License**.
