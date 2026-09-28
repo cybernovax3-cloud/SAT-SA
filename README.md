@@ -15,8 +15,6 @@ SAT-SA processes submitted **alerts, case records, and supporting evidence** to 
 
 The system is designed for **controlled, on-premise, and air-gapped deployment**.
 
-> **SAT-SA assists the examiner; the examiner remains the final decision-maker.**
-
 ---
 
 ## ⚙️ Setup Instructions
