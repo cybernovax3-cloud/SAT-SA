@@ -1,6 +1,21 @@
 SAT-SA — SOC Supervisory Analytics Tool for SOC Assessment
 
-SIH26157 | Team CYBER NOVAX
+<p align="center">
+  <strong>SIH26157 · Team CYBER NOVAX</strong>
+</p>
+
+<p align="center">
+  An offline, air-gapped supervisory analytics platform for assessing periodic cybersecurity submissions from Critical Sector Entities (CSEs).
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Smart%20India%20Hackathon-2026-blue" alt="Smart India Hackathon 2026">
+  <img src="https://img.shields.io/badge/Problem%20Statement-SIH26157-purple" alt="SIH26157">
+  <img src="https://img.shields.io/badge/Deployment-Air--Gapped-success" alt="Air-Gapped">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License">
+</p>
+
+Overview
 
 SAT-SA is an offline, air-gapped supervisory analytics platform designed to support cybersecurity supervisors and examiners in assessing periodic submissions from Critical Sector Entities (CSEs). It transforms alerts, case records and supporting evidence into normalized, correlated, prioritized and explainable supervisory intelligence, while keeping the human examiner as the final decision-maker.
 
@@ -26,35 +41,55 @@ SAT-SA provides a dedicated supervisory analytics and decision-support layer tha
 
 Core Supervisory Workflow
 
-CSE PERIODIC DATA
-        ↓
-EVIDENCE QUALITY & NORMALIZATION
-        ↓
-ENTITY BASELINE & BEHAVIOUR PROFILING
-        ↓
-SUPERVISORY SIGNAL EXTRACTION
-        ↓
-CROSS-EVIDENCE CORRELATION
-        ↓
-EXECUTION GAP & NEGATIVE SPACE ANALYTICS
-        ↓
-SUPERVISORY ATTENTION ASSESSMENT
-        ↓
-INTELLIGENT REVIEW SELECTION
-        ↓
-EXPLAINABLE EVIDENCE & FINDING GENERATION
-        ↓
-HUMAN EXAMINER REVIEW
-        ↓
-SUPERVISORY FINDING / ASSESSMENT REPORT
-        ↓
-EXAMINER FEEDBACK & CALIBRATION
+┌──────────────────────────────────────────────────────────────┐
+│                 CSE PERIODIC DATA                            │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│          EVIDENCE QUALITY & NORMALIZATION                    │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│          ENTITY BASELINE & BEHAVIOUR PROFILING               │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│             SUPERVISORY SIGNAL EXTRACTION                   │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│                CROSS-EVIDENCE CORRELATION                   │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│       EXECUTION GAP & NEGATIVE SPACE ANALYTICS              │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│             SUPERVISORY ATTENTION ASSESSMENT                │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│                INTELLIGENT REVIEW SELECTION                 │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│         EXPLAINABLE EVIDENCE & FINDING GENERATION           │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│                  HUMAN EXAMINER REVIEW                      │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│        SUPERVISORY FINDING / ASSESSMENT REPORT              │
+└──────────────────────────────┬───────────────────────────────┘
+                               ↓
+┌──────────────────────────────────────────────────────────────┐
+│                EXAMINER FEEDBACK & CALIBRATION              │
+└──────────────────────────────────────────────────────────────┘
 
- Key Capabilities
-
-Capability
-
-Purpose
+Key Capabilities
 
 Evidence Intelligence
 
@@ -84,50 +119,57 @@ Offline by Design
 
 On-premise, air-gapped deployment without mandatory cloud AI/API dependency
 
- System Architecture
+System Architecture
 
-┌──────────────────────────────────────────────────────────────┐
-│ CSE PERIODIC SUBMISSIONS                                     │
-│ Alerts • Case Records • Supporting Evidence                  │
-└──────────────────────────────┬───────────────────────────────┘
-                               ↓
-┌──────────────────────────────────────────────────────────────┐
-│ EVIDENCE PROCESSING                                           │
-│ Quality Assessment • Normalization • Traceability             │
-└──────────────────────────────┬───────────────────────────────┘
-                               ↓
-┌──────────────────────────────────────────────────────────────┐
-│ ENTITY INTELLIGENCE                                           │
-│ Baselines • Behaviour Profiling • Deviation Analysis          │
-└──────────────────────────────┬───────────────────────────────┘
-                               ↓
-┌──────────────────────────────────────────────────────────────┐
-│ SUPERVISORY ANALYTICS & CORRELATION                           │
-│ Signals • Cross-Evidence Correlation • Execution Gaps         │
-│ Negative-Space Analytics                                      │
-└──────────────────────────────┬───────────────────────────────┘
-                               ↓
-┌──────────────────────────────────────────────────────────────┐
-│ ATTENTION & REVIEW SELECTION                                  │
-│ Supervisory Attention Assessment • Intelligent Review         │
-└──────────────────────────────┬───────────────────────────────┘
-                               ↓
-┌──────────────────────────────────────────────────────────────┐
-│ EXPLAINABILITY & AI                                           │
-│ Evidence Explanation • Finding Generation                     │
-└──────────────────────────────┬───────────────────────────────┘
-                               ↓
-┌──────────────────────────────────────────────────────────────┐
-│ HUMAN EXAMINER                                                │
-│ Review • Validate • Challenge • Finalize                       │
-└──────────────────────────────┬───────────────────────────────┘
-                               ↓
-┌──────────────────────────────────────────────────────────────┐
-│ SUPERVISORY OUTPUT                                            │
-│ Findings • Assessment Reports • Feedback & Calibration        │
-└──────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│                     CSE PERIODIC SUBMISSIONS                    │
+│              Alerts • Case Records • Evidence                   │
+└───────────────────────────────┬─────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                  EVIDENCE PROCESSING LAYER                      │
+│        Quality Assessment • Normalization • Traceability        │
+└───────────────────────────────┬─────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     ENTITY INTELLIGENCE                         │
+│      Baselines • Behaviour Profiling • Deviation Analysis       │
+└───────────────────────────────┬─────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│              SUPERVISORY ANALYTICS & CORRELATION                │
+│ Signals • Cross-Evidence Correlation • Execution Gaps           │
+│                    Negative-Space Analytics                      │
+└───────────────────────────────┬─────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   ATTENTION & REVIEW SELECTION                  │
+│       Supervisory Attention Assessment • Intelligent Review     │
+└───────────────────────────────┬─────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     EXPLAINABILITY & AI                         │
+│             Evidence Explanation • Finding Generation           │
+└───────────────────────────────┬─────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                       HUMAN EXAMINER                            │
+│              Review • Validate • Challenge • Finalize           │
+└───────────────────────────────┬─────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    SUPERVISORY OUTPUT                           │
+│       Findings • Assessment Reports • Feedback & Calibration    │
+└─────────────────────────────────────────────────────────────────┘
 
- Evidence Sources
+Evidence Sources
 
 Authorized structured evidence can originate from platforms such as:
 
@@ -143,7 +185,7 @@ AI assists the examiner; the examiner makes the supervisory decision.
 
 SAT-SA uses analytics and local AI/XAI for decision-support, explanations and finding-generation assistance. The examiner remains responsible for evidence review, validation, challenge/override and final supervisory findings.
 
- Quick Setup
+Quick Setup
 
 Prerequisites
 
@@ -181,11 +223,75 @@ npm run dev
 
 Evaluation / Demo Flow
 
-CSE Submission → Normalization → Profiling → Signal Extraction → Correlation → Attention Assessment → Review Selection → Explainable Evidence → Human Examiner Review → Assessment Finding
+CSE Submission
+      ↓
+Normalization
+      ↓
+Profiling
+      ↓
+Signal Extraction
+      ↓
+Correlation
+      ↓
+Attention Assessment
+      ↓
+Review Selection
+      ↓
+Explainable Evidence
+      ↓
+Human Examiner Review
+      ↓
+Assessment Finding
 
 Expected Outputs
 
-Evidence Quality Indicators · Entity Profiles · Supervisory Signals · Cross-Evidence Correlations · Execution-Gap Indicators · Negative-Space Indicators · Supervisory Attention Assessment · Intelligent Review Selection · Explainable Evidence · Examiner-Assisted Findings · Assessment Reports · Examiner Feedback & Calibration
+Evidence Quality Indicators
+
+Evidence quality and completeness assessment
+
+Entity Profiles
+
+Behavioural and historical entity context
+
+Supervisory Signals
+
+Signals requiring supervisory attention
+
+Cross-Evidence Correlations
+
+Relationships across submitted evidence
+
+Execution-Gap Indicators
+
+Indicators of execution or operational gaps
+
+Negative-Space Indicators
+
+Indicators derived from missing or insufficient evidence
+
+Supervisory Attention Assessment
+
+Identification of areas requiring deeper review
+
+Intelligent Review Selection
+
+Prioritization of entities, evidence and investigations
+
+Explainable Evidence
+
+Evidence-linked analytical explanations
+
+Examiner-Assisted Findings
+
+Finding-generation assistance for examiners
+
+Assessment Reports
+
+Structured supervisory assessment output
+
+Examiner Feedback & Calibration
+
+Feedback loop for improving analytical support
 
 Scope & Boundaries
 
