@@ -1,101 +1,85 @@
-# SAT-SA — Supervisory Analytics Tool for SOC Assessment
+SAT-SA — SOC Supervisory Analytics Tool for SOC Assessment
 
-SAT-SA is an AI-assisted supervisory analytics platform designed to support the assessment of Security Operations Centers (SOCs).
+SIH26157 | Team CYBERNOVA
 
-## Overview
+SAT-SA is an offline, air-gapped supervisory analytics platform that helps cybersecurity examiners assess periodic submissions from Critical Sector Entities (CSEs). It transforms alerts, case records and supporting evidence into correlated, prioritized and explainable review intelligence, while keeping the human examiner as the final decision-maker.
 
-SAT-SA analyzes SOC alerts, investigation records, entity behaviour, evidence quality, operational gaps, and cyber-resilience indicators to support supervisory assessment.
+Core Workflow
 
-It is designed to assist human examiners and does not replace SOC operations, SIEM platforms, or human supervisory judgement.
+CSE Periodic Data → Evidence Quality & Normalization → Entity Baseline & Behaviour Profiling → Supervisory Signal Extraction → Cross-Evidence Correlation → Execution Gap & Negative Space Analytics → Supervisory Attention Assessment → Intelligent Review Selection → Explainable Evidence & Finding Generation → Human Examiner Review → Supervisory Finding / Assessment Report → Examiner Feedback & Calibration
 
-## Key Capabilities
+Key Capabilities
 
-- SOC Alert Analysis
-- Evidence Normalization
-- Entity Baseline & Behaviour Profiling
-- Cross-Evidence Correlation
-- Risk Analytics
-- Supervisory Attention Assessment
-- Cyber-Resilience Analytics
-- Operational Execution-Gap Analysis
-- Explainable Findings
-- Investigation & Assessment Workflows
-- Supervisory Reporting
+Evidence Intelligence: validation, normalization and evidence traceability.
 
-## System Workflow
+Entity Profiling: behavioural baselines and deviation analysis.
 
-SOC Alerts + Case Records  
-↓  
-Evidence Normalization  
-↓  
-Entity Baseline & Behaviour Profiling  
-↓  
-Cross-Evidence Correlation  
-↓  
-Risk & Resilience Analytics  
-↓  
-Supervisory Attention Assessment  
-↓  
-Intelligent Review Selection  
-↓  
-Explainable Evidence & Findings  
-↓  
-Human Examiner Review  
-↓  
-Supervisory Assessment / Report
+Supervisory Analytics: cross-evidence correlation and execution-gap / negative-space analysis.
 
-## Technology Stack
+Intelligent Prioritization: identifies entities and evidence requiring supervisory attention.
 
-### Frontend
+Explainable AI: evidence-linked explanations and finding-generation assistance using local AI/XAI.
 
-- React
-- Vite
-- JavaScript
-- React Router
-- Axios
-- Lucide React
-- jsPDF
+Human-in-the-Loop: examiner validates, challenges and finalizes findings.
 
-### Backend
+Offline by Design: on-premise, air-gapped deployment without cloud AI/API dependency.
 
-- Python
-- FastAPI
-- Uvicorn
-- REST APIs
+Technology Stack
 
-### Security Analytics
+Frontend: React + TypeScript, Tailwind CSS, ECharts
+Backend: FastAPI, Celery, Redis
+Analytics: Scikit-learn, PyOD, behavioural/anomaly analytics
+AI/XAI: Local Ollama, SHAP
+Storage/Search: PostgreSQL, TimescaleDB, OpenSearch
+Security: Keycloak RBAC, Nginx, Audit Trail
+Deployment: Docker, On-Premise, Air-Gapped
 
-- Wazuh Indexer
-- Alert Normalization
-- Behaviour Profiling
-- Entity Baselining
-- Evidence Correlation
-- Risk Analytics
-- Cyber-Resilience Analysis
-- Supervisory Attention Analytics
+Quick Setup
 
-### AI
+1. Clone
 
-- Local Ollama Integration
-- AI-Assisted Intelligence Generation
-- Explainable Analysis
-- Local Model Support
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd SAT-SA
 
-## Repository Structure
+2. Backend
 
-```text
-SAT-SA/
-├── backend/
-│   ├── app/
-│   ├── requirements.txt
-│   └── ...
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── LICENSE
-├── README.md
-└── .gitignore
+cd backend
+python -m venv .venv
+
+Windows
+
+.venv\Scripts\activate
+
+Linux
+
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+Configure the environment values required by the submitted backend, then start the API using the actual FastAPI entry point in the repository.
+
+3. Frontend
+
+cd ../frontend
+npm install
+npm run dev
+
+Open the local URL displayed by Vite.
+
+4. Docker
+
+docker compose build
+docker compose up -d
+docker compose ps
+
+Stop services:
+
+docker compose down
+
+Evaluation / Demo Flow
+
+Submission → Normalization → Profiling → Correlation → Attention Assessment → Review Selection → Explainable Evidence → Examiner Review → Assessment Finding
+
+Security & Scope
+
+SAT-SA is designed for authorized supervisory use with RBAC, evidence traceability and auditability. It is not a SIEM, not a real-time SOC monitoring platform, not a SOC replacement, and does not make the final supervisory decision.
