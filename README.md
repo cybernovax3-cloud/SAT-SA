@@ -1,99 +1,117 @@
-SAT-SA — SOC Supervisory Analytics Tool for SOC Assessment
+# SAT-SA — SOC Supervisory Analytics Tool for SOC Assessment
 
-SIH26157 | Team CYBER NOVAX
+**SIH26157 | Team CYBER NOVAX**
 
-SAT-SA is an offline, air-gapped supervisory analytics platform designed to support cybersecurity supervisors and examiners in assessing periodic submissions from Critical Sector Entities (CSEs).
+## 📌 Project Overview
 
-📌 Project
+**SAT-SA** is an offline, air-gapped supervisory analytics platform designed to support cybersecurity supervisors and examiners in assessing periodic submissions from **Critical Sector Entities (CSEs)**.
 
-SAT-SA processes submitted alerts, case records and supporting evidence to assist examiners with:
+SAT-SA processes submitted **alerts, case records, and supporting evidence** to assist examiners with:
 
-Evidence normalization
+* Evidence normalization
+* Evidence analysis
+* Alert prioritization
+* Explainable supervisory review
 
-Analysis
+The system is designed for **controlled, on-premise, and air-gapped deployment**.
 
-Prioritization
+> **SAT-SA assists the examiner; the examiner remains the final decision-maker.**
 
-Explainable supervisory review
+---
 
-The system is designed for controlled, on-premise and air-gapped deployment.
+## ⚙️ Setup Instructions
 
-SAT-SA assists the examiner; the examiner remains the final decision-maker.
-
-⚙️ Setup Instructions
-
-Prerequisites
+### Prerequisites
 
 Install the following before running the project:
 
-Python 3.x
+* **Python 3.x**
+* **Node.js and npm**
+* **Git**
 
-Node.js and npm
-
-Git
-
-1. Clone the Repository
+### 1. Clone the Repository
 
 Open a terminal and run:
 
+```bash
 git clone https://github.com/cybernovax3-cloud/SAT-SA.git
 cd SAT-SA
+```
 
-2. Backend Setup
+### 2. Backend Setup
 
-Open a terminal in the project directory:
+Navigate to the backend directory:
 
+```bash
 cd backend
+```
 
-Create a Python Virtual Environment
+#### Create a Python Virtual Environment
 
+```bash
 python -m venv .venv
+```
 
-Windows
+**Windows:**
 
+```bash
 .venv\Scripts\activate
+```
 
-Linux / Ubuntu
+**Linux / Ubuntu:**
 
+```bash
 source .venv/bin/activate
+```
 
-Install Backend Dependencies
+#### Install Backend Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 Configure any environment values required by the submitted backend.
 
-Start the Backend
+#### Start the Backend
 
-Start the FastAPI application using the FastAPI entry point configured in the backend directory.
+Start the **FastAPI** application using the FastAPI entry point configured in the `backend` directory.
 
-3. Frontend Setup
+---
 
-Open a new terminal and navigate to the frontend:
+### 3. Frontend Setup
 
+Open a **new terminal** and navigate to the frontend directory:
+
+```bash
 cd frontend
+```
 
-Install Frontend Dependencies
+#### Install Frontend Dependencies
 
+```bash
 npm install
+```
 
-Start the Development Server
+#### Start the Development Server
 
+```bash
 npm run dev
+```
 
-Open the local URL displayed by Vite in your browser.
+Open the **local URL displayed by Vite** in your browser.
 
-🔗 Repository
+---
 
-GitHub Repository:
-https://github.com/cybernovax3-cloud/SAT-SA
+## 🔗 Repository
 
-Problem Statement: SIH26157
+**GitHub Repository:**
+[https://github.com/cybernovax3-cloud/SAT-SA](https://github.com/cybernovax3-cloud/SAT-SA)
 
-Team: CYBER NOVAX
 
-📄 License
+---
 
-This project is licensed under the MIT License.
+## 📄 License
 
-Copyright © 2026 Team CYBER NOVAX
+This project is licensed under the **MIT License**.
+
+**Copyright © 2026 Team CYBER NOVAX**
