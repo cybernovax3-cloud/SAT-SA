@@ -4,15 +4,23 @@ SIH26157 | Team CYBER NOVAX
 
 SAT-SA is an offline, air-gapped supervisory analytics platform designed to support cybersecurity supervisors and examiners in assessing periodic submissions from Critical Sector Entities (CSEs).
 
-Project
+📌 Project
 
-SAT-SA processes submitted alerts, case records and supporting evidence to assist examiners with evidence normalization, analysis, prioritization and explainable supervisory review.
+SAT-SA processes submitted alerts, case records and supporting evidence to assist examiners with:
+
+Evidence normalization
+
+Analysis
+
+Prioritization
+
+Explainable supervisory review
 
 The system is designed for controlled, on-premise and air-gapped deployment.
 
 SAT-SA assists the examiner; the examiner remains the final decision-maker.
 
-Setup Instructions
+⚙️ Setup Instructions
 
 Prerequisites
 
@@ -22,10 +30,13 @@ Python 3.x
 
 Node.js and npm
 
+Git
+
 1. Clone the Repository
 
-git clone https://github.com/cybernovax3-cloud/SAT-SA.git
+Open a terminal and run:
 
+git clone https://github.com/cybernovax3-cloud/SAT-SA.git
 cd SAT-SA
 
 2. Backend Setup
@@ -34,7 +45,7 @@ Open a terminal in the project directory:
 
 cd backend
 
-Create a Python virtual environment:
+Create a Python Virtual Environment
 
 python -m venv .venv
 
@@ -46,51 +57,42 @@ Linux / Ubuntu
 
 source .venv/bin/activate
 
-Install the backend dependencies:
+Install Backend Dependencies
 
 pip install -r requirements.txt
 
 Configure any environment values required by the submitted backend.
 
+Start the Backend
+
 Start the FastAPI application using the FastAPI entry point configured in the backend directory.
 
 3. Frontend Setup
 
-Open a new terminal:
+Open a new terminal and navigate to the frontend:
 
 cd frontend
 
-Install the frontend dependencies:
+Install Frontend Dependencies
 
 npm install
 
-Start the development server:
+Start the Development Server
 
 npm run dev
 
 Open the local URL displayed by Vite in your browser.
 
-Project Structure
+🔗 Repository
 
-SAT-SA/
-├── backend/              
-├── frontend/
-├── .github/
-│   └── workflows/        
-├── LICENSE
-├── README.md
-└── gen_ns_card.py
-
-Repository
-
-GitHub:
+GitHub Repository:
 https://github.com/cybernovax3-cloud/SAT-SA
 
 Problem Statement: SIH26157
 
 Team: CYBER NOVAX
 
-License
+📄 License
 
 This project is licensed under the MIT License.
 
