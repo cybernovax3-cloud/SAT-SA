@@ -3,30 +3,30 @@
   <head>
     <meta charset="UTF-8" />
 
-    <script>
-      (function () {
-        const redirect = sessionStorage.getItem('sat-sa-redirect');
-
-        if (redirect) {
-          sessionStorage.removeItem('sat-sa-redirect');
-
-          if (
-            window.location.pathname !==
-            redirect.split('?')[0].split('#')[0]
-          ) {
-            window.history.replaceState(null, '', redirect);
-          }
-        }
-      })();
-    </script>
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/SAT-SA/favicon.svg" />
+
     <title>SAT-SA</title>
   </head>
 
   <body>
     <div id="root"></div>
+
+    <script>
+      const redirect = sessionStorage.getItem("sat-sa-redirect");
+
+      if (redirect) {
+        sessionStorage.removeItem("sat-sa-redirect");
+
+        window.history.replaceState(
+          null,
+          "",
+          "/SAT-SA" + redirect
+        );
+      }
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
