@@ -9,22 +9,11 @@
       const base = '/SAT-SA';
       const path = window.location.pathname;
 
-      // Do NOT redirect missing assets/files.
-      // Only handle React application routes.
+      // Only handle React routes
       if (
         path.startsWith(base) &&
         !path.startsWith(base + '/assets/') &&
-        !path.endsWith('.js') &&
-        !path.endsWith('.css') &&
-        !path.endsWith('.png') &&
-        !path.endsWith('.jpg') &&
-        !path.endsWith('.jpeg') &&
-        !path.endsWith('.svg') &&
-        !path.endsWith('.ico') &&
-        !path.endsWith('.json') &&
-        !path.endsWith('.webp') &&
-        !path.endsWith('.woff') &&
-        !path.endsWith('.woff2')
+        !path.match(/\.[^/]+$/)
       ) {
         const route = path.slice(base.length) || '/';
 
@@ -40,6 +29,6 @@
 </head>
 
 <body>
-  <p>SAT-SA</p>
+  <p>Loading SAT-SA...</p>
 </body>
 </html>
