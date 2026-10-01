@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>SAT-SA</title>
 
   <script>
-    (function () {
-      const base = '/SAT-SA';
-      const path = window.location.pathname;
+    const base = "/SAT-SA";
 
-      // Only handle React routes
-      if (
-        path.startsWith(base) &&
-        !path.startsWith(base + '/assets/') &&
-        !path.match(/\.[^/]+$/)
-      ) {
-        const route = path.slice(base.length) || '/';
+    const redirect =
+      window.location.pathname.replace(base, "") +
+      window.location.search +
+      window.location.hash;
 
-        sessionStorage.setItem(
-          'sat-sa-redirect',
-          route + window.location.search + window.location.hash
-        );
+    sessionStorage.setItem("sat-sa-redirect", redirect);
 
-        window.location.replace(base + '/');
-      }
-    })();
+    window.location.replace(base + "/");
   </script>
 </head>
 
 <body>
-  <p>Loading SAT-SA...</p>
+  Loading SAT-SA...
 </body>
 </html>
